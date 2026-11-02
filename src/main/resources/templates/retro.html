@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Módulo de Retroalimentación - Campus Ejercicios</title>
+</head>
+<body>
+    <h2>Ejecución y Retroalimentación de Código</h2>
+    
+    <form action="#" th:action="@{/ejecutar}" method="post">
+        <label for="ejercicio">Selecciona o escribe tu código:</label><br>
+        <textarea id="ejercicio" name="codigoUsuario" rows="8" cols="60" placeholder="Escribe aquí tu código en Java..." required></textarea><br><br>
+        
+        <button type="submit">Ejecutar y Evaluar</button>
+    </form>
+
+    <br>
+    <!-- Aquí aparece el desglose exacto de la retroalimentación al ejecutar -->
+    <div th:if="${resultadoRevision}">
+        <h3>Detalle de la Evaluación:</h3>
+        <p th:text="${resultadoRevision}" style="font-weight: bold; color: #b30000; white-space: pre-line;"></p>
+    </div>
+</body>
+</html>
+
